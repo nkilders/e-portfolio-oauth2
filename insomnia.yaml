@@ -1,0 +1,309 @@
+_type: export
+__export_format: 4
+__export_date: 2021-11-06T17:34:28.391Z
+__export_source: insomnia.desktop.app:v2021.6.0
+resources:
+  - _id: req_e239839af592427eadf9807d699c8b90
+    parentId: fld_c154ae1b2f3440cfb3858130b16588d0
+    modified: 1636219989536
+    created: 1636153882779
+    url: "{{ _.apiBaseUrl }}/oauth2/token"
+    name: Access
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - name: client_id
+          value: "{{ _.clientId }}"
+          id: pair_cb588e19d6eb4881987cef82a8446108
+        - id: pair_4324bab98fc14b66b78770a62e7f66b1
+          name: client_secret
+          value: "{{ _.clientSecret }}"
+          description: ""
+        - id: pair_8336165e7c0b478a99ba6aeb3c0f06cc
+          name: grant_type
+          value: authorization_code
+          description: ""
+        - id: pair_aec3a87b123d4c2bb5e9f4fe686d12ba
+          name: code
+          value: "{% prompt 'Code', '', '', '', false, true %}"
+          description: ""
+        - id: pair_33424f67a08d4a39b088804ccf8bb313
+          name: redirect_uri
+          value: http://localhost
+          description: ""
+    parameters: []
+    headers:
+      - id: pair_dc649096b4f9472e9d0ff7356e2ce8e3
+        name: Content-Type
+        value: application/x-www-form-urlencoded
+        description: ""
+    authentication: {}
+    metaSortKey: -1636195061791
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_c154ae1b2f3440cfb3858130b16588d0
+    parentId: wrk_131a405b1f3c4b0ba9629be4bd059aa1
+    modified: 1636195329081
+    created: 1636195329081
+    name: Token
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1636195329081
+    _type: request_group
+  - _id: wrk_131a405b1f3c4b0ba9629be4bd059aa1
+    parentId: null
+    modified: 1636218908843
+    created: 1636153875830
+    name: OAuth2
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_0757734177914f1e903c07dceaf9ce09
+    parentId: fld_c154ae1b2f3440cfb3858130b16588d0
+    modified: 1636219286559
+    created: 1636195061741
+    url: "{{ _.apiBaseUrl }}/oauth2/token"
+    name: Refresh
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_b8881941a8bf43c6a4b19523b47246b6
+          name: client_id
+          value: "{{ _.clientId }}"
+          description: ""
+        - id: pair_9b8f7dfa9ab54e14831886b051dea3e5
+          name: client_secret
+          value: "{{ _.clientSecret }}"
+          description: ""
+        - id: pair_5b8eb209f548485881b2f8c038bfba81
+          name: grant_type
+          value: refresh_token
+          description: ""
+        - id: pair_707a3ce6cd9f42feb20621353208b139
+          name: refresh_token
+          value: "{% prompt 'Refresh Token', '', '', '', false, true %}"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_e02095f5798c4c4586058c1562adeef3
+    authentication: {}
+    metaSortKey: -1636195061741
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_34b1ea577f5c4f408dda1c0e56d277b9
+    parentId: fld_c154ae1b2f3440cfb3858130b16588d0
+    modified: 1636219287029
+    created: 1636195175978
+    url: "{{ _.apiBaseUrl }}/oauth2/token/revoke"
+    name: Revoke
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_698c8c89072f41c6898b6ebc54a6fa3a
+          name: client_id
+          value: "{{ _.clientId }}"
+          description: ""
+        - id: pair_f9e97f49d0b54f35b4f1f36e1dd87fac
+          name: client_secret
+          value: "{{ _.clientSecret }}"
+          description: ""
+        - id: pair_980a3b1b0d024d30af57b42e3f21e1f0
+          name: token
+          value: "{% prompt 'Token', '', '', '', false, true %}"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_67ac457a4cfc4cba80ef87f5f6702ef5
+    authentication: {}
+    metaSortKey: -1636195061691
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_743e0b7b53ce4ae0834e5a2a1825b384
+    parentId: fld_d27de7110557456993e898ba17ad8004
+    modified: 1636219763419
+    created: 1636194854011
+    url: "{{ _.apiBaseUrl }}/oauth2/@me"
+    name: Auth Information
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      prefix: ""
+      token: "{% prompt 'Access Token', '', '', '', false, true %}"
+    metaSortKey: -1636197108695
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_d27de7110557456993e898ba17ad8004
+    parentId: wrk_131a405b1f3c4b0ba9629be4bd059aa1
+    modified: 1636196372738
+    created: 1636196361575
+    name: Data
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1636194853961
+    _type: request_group
+  - _id: req_9d05ef5037ed4df4857f36c6b1bf20d6
+    parentId: fld_d27de7110557456993e898ba17ad8004
+    modified: 1636219768637
+    created: 1636198580472
+    url: "{{ _.apiBaseUrl }}/users/@me"
+    name: "@me"
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{% prompt 'Access Token', '', '', '', false, true %}"
+    metaSortKey: -1636197108670
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_4a2767a34ac148be96c8dbe514b12626
+    parentId: fld_d27de7110557456993e898ba17ad8004
+    modified: 1636219812017
+    created: 1636197108645
+    url: "{{ _.apiBaseUrl }}/users/@me/guilds"
+    name: Guilds
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{% prompt 'Access Token', '', '', '', false, true %}"
+    metaSortKey: -1636197108645
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9ea2e68e551b4d74a027bd54c3752f77
+    parentId: fld_d27de7110557456993e898ba17ad8004
+    modified: 1636219807978
+    created: 1636198647866
+    url: "{{ _.apiBaseUrl }}/users/@me/connections"
+    name: Connections
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{% prompt 'Access Token', '', '', '', false, true %}"
+    metaSortKey: -1636197108595
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_b66d192fa08bcfcacffa7bf16cad3df4d98b93a8
+    parentId: wrk_131a405b1f3c4b0ba9629be4bd059aa1
+    modified: 1636219520937
+    created: 1636153875842
+    name: Base Environment
+    data:
+      apiBaseUrl: https://discord.com/api
+      clientId: "906317672151674972"
+      clientSecret: RxDNT3kh4YYJ1j4zbMIl2Kz8H1kxesCg
+    dataPropertyOrder:
+      "&":
+        - apiBaseUrl
+        - clientId
+        - clientSecret
+    color: null
+    isPrivate: false
+    metaSortKey: 1636153875842
+    _type: environment
+  - _id: jar_b66d192fa08bcfcacffa7bf16cad3df4d98b93a8
+    parentId: wrk_131a405b1f3c4b0ba9629be4bd059aa1
+    modified: 1636153886824
+    created: 1636153875845
+    name: Default Jar
+    cookies:
+      - key: __dcfduid
+        value: b2b6c5233e8d11ec9ba742010a0a0629
+        expires: 2026-11-04T23:11:25.000Z
+        maxAge: 157680000
+        domain: discord.com
+        path: /
+        secure: true
+        httpOnly: true
+        hostOnly: true
+        creation: 2021-11-05T23:11:26.809Z
+        lastAccessed: 2021-11-05T23:11:26.809Z
+        id: "05772214632301531"
+      - key: __sdcfduid
+        value: b2b6c5233e8d11ec9ba742010a0a06294865ddef445ded9e1642ab51b0a4db5e4f856d48e18b4404f2d1581ebaec44bf
+        expires: 2026-11-04T23:11:25.000Z
+        maxAge: 157680000
+        domain: discord.com
+        path: /
+        secure: true
+        httpOnly: true
+        hostOnly: true
+        creation: 2021-11-05T23:11:26.809Z
+        lastAccessed: 2021-11-05T23:11:26.809Z
+        id: "02007619180750808"
+    _type: cookie_jar
+  - _id: spc_218da9bedf9d4af89c857a23b6c39d87
+    parentId: wrk_131a405b1f3c4b0ba9629be4bd059aa1
+    modified: 1636153875836
+    created: 1636153875836
+    fileName: OAuth2
+    contents: ""
+    contentType: yaml
+    _type: api_spec
