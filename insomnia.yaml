@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2021-11-06T17:34:28.391Z
+__export_date: 2021-11-06T20:31:41.361Z
 __export_source: insomnia.desktop.app:v2021.6.0
 resources:
   - _id: req_e239839af592427eadf9807d699c8b90
     parentId: fld_c154ae1b2f3440cfb3858130b16588d0
-    modified: 1636219989536
+    modified: 1636230585832
     created: 1636153882779
     url: "{{ _.apiBaseUrl }}/oauth2/token"
     name: Access
@@ -51,12 +51,12 @@ resources:
     _type: request
   - _id: fld_c154ae1b2f3440cfb3858130b16588d0
     parentId: wrk_131a405b1f3c4b0ba9629be4bd059aa1
-    modified: 1636195329081
+    modified: 1636230673663
     created: 1636195329081
-    name: Token
+    name: Authorization
     description: ""
     environment: {}
-    environmentPropertyOrder: null
+    environmentPropertyOrder: {}
     metaSortKey: -1636195329081
     _type: request_group
   - _id: wrk_131a405b1f3c4b0ba9629be4bd059aa1
@@ -69,7 +69,7 @@ resources:
     _type: workspace
   - _id: req_0757734177914f1e903c07dceaf9ce09
     parentId: fld_c154ae1b2f3440cfb3858130b16588d0
-    modified: 1636219286559
+    modified: 1636230596501
     created: 1636195061741
     url: "{{ _.apiBaseUrl }}/oauth2/token"
     name: Refresh
@@ -111,7 +111,7 @@ resources:
     _type: request
   - _id: req_34b1ea577f5c4f408dda1c0e56d277b9
     parentId: fld_c154ae1b2f3440cfb3858130b16588d0
-    modified: 1636219287029
+    modified: 1636230597279
     created: 1636195175978
     url: "{{ _.apiBaseUrl }}/oauth2/token/revoke"
     name: Revoke
@@ -149,7 +149,7 @@ resources:
     _type: request
   - _id: req_743e0b7b53ce4ae0834e5a2a1825b384
     parentId: fld_d27de7110557456993e898ba17ad8004
-    modified: 1636219763419
+    modified: 1636230639525
     created: 1636194854011
     url: "{{ _.apiBaseUrl }}/oauth2/@me"
     name: Auth Information
@@ -173,9 +173,9 @@ resources:
     _type: request
   - _id: fld_d27de7110557456993e898ba17ad8004
     parentId: wrk_131a405b1f3c4b0ba9629be4bd059aa1
-    modified: 1636196372738
+    modified: 1636230686346
     created: 1636196361575
-    name: Data
+    name: Resources
     description: ""
     environment: {}
     environmentPropertyOrder: null
