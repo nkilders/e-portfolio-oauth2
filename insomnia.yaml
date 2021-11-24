@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2021-11-06T20:31:41.361Z
+__export_date: 2021-11-24T08:42:43.843Z
 __export_source: insomnia.desktop.app:v2021.6.0
 resources:
   - _id: req_e239839af592427eadf9807d699c8b90
     parentId: fld_c154ae1b2f3440cfb3858130b16588d0
-    modified: 1636230585832
+    modified: 1637743303669
     created: 1636153882779
     url: "{{ _.apiBaseUrl }}/oauth2/token"
     name: Access
@@ -69,7 +69,7 @@ resources:
     _type: workspace
   - _id: req_0757734177914f1e903c07dceaf9ce09
     parentId: fld_c154ae1b2f3440cfb3858130b16588d0
-    modified: 1636230596501
+    modified: 1637743300611
     created: 1636195061741
     url: "{{ _.apiBaseUrl }}/oauth2/token"
     name: Refresh
@@ -111,7 +111,7 @@ resources:
     _type: request
   - _id: req_34b1ea577f5c4f408dda1c0e56d277b9
     parentId: fld_c154ae1b2f3440cfb3858130b16588d0
-    modified: 1636230597279
+    modified: 1637743289742
     created: 1636195175978
     url: "{{ _.apiBaseUrl }}/oauth2/token/revoke"
     name: Revoke
@@ -138,7 +138,7 @@ resources:
         value: application/x-www-form-urlencoded
         id: pair_67ac457a4cfc4cba80ef87f5f6702ef5
     authentication: {}
-    metaSortKey: -1636195061691
+    metaSortKey: -1636195061728.5
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -148,8 +148,8 @@ resources:
     settingFollowRedirects: global
     _type: request
   - _id: req_743e0b7b53ce4ae0834e5a2a1825b384
-    parentId: fld_d27de7110557456993e898ba17ad8004
-    modified: 1636230639525
+    parentId: fld_c154ae1b2f3440cfb3858130b16588d0
+    modified: 1637743288195
     created: 1636194854011
     url: "{{ _.apiBaseUrl }}/oauth2/@me"
     name: Auth Information
@@ -162,7 +162,7 @@ resources:
       type: bearer
       prefix: ""
       token: "{% prompt 'Access Token', '', '', '', false, true %}"
-    metaSortKey: -1636197108695
+    metaSortKey: -1636195061716
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -171,19 +171,9 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: fld_d27de7110557456993e898ba17ad8004
-    parentId: wrk_131a405b1f3c4b0ba9629be4bd059aa1
-    modified: 1636230686346
-    created: 1636196361575
-    name: Resources
-    description: ""
-    environment: {}
-    environmentPropertyOrder: null
-    metaSortKey: -1636194853961
-    _type: request_group
   - _id: req_9d05ef5037ed4df4857f36c6b1bf20d6
     parentId: fld_d27de7110557456993e898ba17ad8004
-    modified: 1636219768637
+    modified: 1637743274818
     created: 1636198580472
     url: "{{ _.apiBaseUrl }}/users/@me"
     name: "@me"
@@ -204,9 +194,19 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: fld_d27de7110557456993e898ba17ad8004
+    parentId: wrk_131a405b1f3c4b0ba9629be4bd059aa1
+    modified: 1636230686346
+    created: 1636196361575
+    name: Resources
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1636194853961
+    _type: request_group
   - _id: req_4a2767a34ac148be96c8dbe514b12626
     parentId: fld_d27de7110557456993e898ba17ad8004
-    modified: 1636219812017
+    modified: 1637743285316
     created: 1636197108645
     url: "{{ _.apiBaseUrl }}/users/@me/guilds"
     name: Guilds
@@ -229,7 +229,7 @@ resources:
     _type: request
   - _id: req_9ea2e68e551b4d74a027bd54c3752f77
     parentId: fld_d27de7110557456993e898ba17ad8004
-    modified: 1636219807978
+    modified: 1637743287029
     created: 1636198647866
     url: "{{ _.apiBaseUrl }}/users/@me/connections"
     name: Connections
@@ -252,7 +252,7 @@ resources:
     _type: request
   - _id: env_b66d192fa08bcfcacffa7bf16cad3df4d98b93a8
     parentId: wrk_131a405b1f3c4b0ba9629be4bd059aa1
-    modified: 1636219520937
+    modified: 1637743065014
     created: 1636153875842
     name: Base Environment
     data:
