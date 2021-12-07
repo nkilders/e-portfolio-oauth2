@@ -1,6 +1,6 @@
 const express = require('express');
 
-const oauthUrl = 'https://discord.com/api/oauth2/authorize?client_id=906317672151674972&redirect_uri=http%3A%2F%2Flocalhost&response_type=code&scope=identify%20email%20connections';
+const oauthUrl = 'https://discord.com/api/oauth2/authorize?client_id=906317672151674972&redirect_uri=http%3A%2F%2Flocalhost&response_type=code&scope=guilds%20email%20identify';
 
 const app = express();
 
